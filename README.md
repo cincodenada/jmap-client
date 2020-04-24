@@ -26,6 +26,22 @@ or
 
 depending on your preferred package manager.
 
+### Code
+
+To use the library, create an instance of the *Client* class, then use its fluent API to send some JMAP requests:
+
+    new jmap.Client(<your Transport>, <your PromiseProvider>)
+        .withAPIUrl('https://jmap.my.server.com')
+        .withAuthenticationToken('YourAuthenticationToken')
+        .getMailboxes()
+        .then((mailboxes) => {
+            // Do something with the list of mailboxes
+        }, (err) => {
+            // An error occured
+        });
+
+Once you're familiar with the library, head on to the generated [API documentation](http://linagora.github.io/jmap-client/doc/api/) to see what methods are available.
+
 ## How to contribute
 
 ### 1. Clone the repository
